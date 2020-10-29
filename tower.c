@@ -1,4 +1,4 @@
-#include "stack.c"
+#include "stack.h"
 #include <getopt.h>
 #include <math.h>
 #include <stdbool.h>
@@ -118,16 +118,16 @@ void move_disks(Stack *src, Stack *dest) {
   int disk1 = stack_peek(src);
   int disk2 = stack_peek(dest);
 
-  if (stack_empty(src)) {  // Pop from dest, move to src if src is empty
+  if (stack_empty(src)) { // Pop from dest, move to src if src is empty
     stack_push(src, stack_pop(dest));
     print_move(disk2, dest->name, src->name);
-  } else if (stack_empty(dest)) {  // Pop from src, move to dest if dest empty
+  } else if (stack_empty(dest)) { // Pop from src, move to dest if dest empty
     stack_push(dest, stack_pop(src));
     print_move(disk1, src->name, dest->name);
-  } else if (disk1 > disk2) {  // If src has bigger disk, move disk dest -> src
+  } else if (disk1 > disk2) { // If src has bigger disk, move disk dest -> src
     stack_push(src, stack_pop(dest));
     print_move(disk2, dest->name, src->name);
-  } else {  // If dest has bigger disk, move disk src -> dest
+  } else { // If dest has bigger disk, move disk src -> dest
     stack_push(dest, stack_pop(src));
     print_move(disk1, src->name, dest->name);
   }
