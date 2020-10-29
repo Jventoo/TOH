@@ -1,4 +1,4 @@
-# Assignment 3 - Jack Vento
+# Tower of Hanoi - Jack Vento
 ## The Program
 
 The program is a text-based version of the puzzle The Tower of Hanoi. It features both stack-based and recursive solutions.
